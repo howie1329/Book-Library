@@ -13,50 +13,18 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
+            
             ScrollView{
+                
                 LazyVStack{
                     ForEach(model.books){ book in
-                        ZStack(alignment:.bottom){
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 10)
-                                .aspectRatio(CGSize(width: 260, height: 450), contentMode: .fit)
-                            
-                            VStack{
-                                
-                                VStack{
-                                    HStack(spacing:50){
-                                        VStack(alignment:.leading){
-                                            Text(book.title)
-                                                .font(.title)
-                                                .bold()
-                                            Text(book.author)
-                                                .bold()
-                                        }
-                                        .padding(.top)
-                                        VStack{
-                                            Button(action: {}) {
-                                                Image(systemName: "star")
-                                            }
-                                        }
-                                    }}
-                                .padding([.leading,.trailing])
-                                
-                                VStack{
-                                    Image("cover" + String(book.id))
-                                        .resizable()
-                                        .aspectRatio(CGSize(width: 275, height: 400), contentMode: .fit)
-                                        .clipped()
-                                        .padding()
-                                }
-                                
-                                
-                            }
+                        
+                        NavigationLink {
+                            Text("Hello")
+                        } label: {
+                            MainViewRow(title: book.title, author: book.author, bookId: book.id)
                         }
-                        .padding()
-                        
-                        
+                        .foregroundColor(.black)
                     }
                 }
                 .navigationTitle("My Library")
