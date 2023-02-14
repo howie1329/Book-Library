@@ -12,6 +12,9 @@
 		F336004F299B41BD00340715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F336004E299B41BD00340715 /* Assets.xcassets */; };
 		F3360052299B41BD00340715 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3360051299B41BD00340715 /* Preview Assets.xcassets */; };
 		F336005A299B42AD00340715 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = F3360059299B42AD00340715 /* Data.json */; };
+		F3360060299B62CD00340715 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336005F299B62CD00340715 /* Book.swift */; };
+		F3360062299B63F800340715 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3360061299B63F800340715 /* DataService.swift */; };
+		F3360064299B675C00340715 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3360063299B675C00340715 /* BookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		F336004E299B41BD00340715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3360051299B41BD00340715 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3360059299B42AD00340715 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		F336005F299B62CD00340715 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F3360061299B63F800340715 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F3360063299B675C00340715 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		F336005C299B42BD00340715 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F3360063299B675C00340715 /* BookModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 		F336005D299B42C600340715 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F336005F299B62CD00340715 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 		F336005E299B557200340715 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F3360061299B63F800340715 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -181,8 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3360064299B675C00340715 /* BookModel.swift in Sources */,
 				F336004D299B41BC00340715 /* MainView.swift in Sources */,
 				F336004B299B41BC00340715 /* Book_LibraryApp.swift in Sources */,
+				F3360060299B62CD00340715 /* Book.swift in Sources */,
+				F3360062299B63F800340715 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

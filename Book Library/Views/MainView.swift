@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @EnvironmentObject var model:BookModel
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(String(model.books.count))
         }
         .padding()
     }
@@ -22,5 +22,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(BookModel())
     }
 }
