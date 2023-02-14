@@ -20,9 +20,9 @@ struct MainView: View {
                     ForEach(model.books){ book in
                         
                         NavigationLink {
-                            Text("Hello")
+                            BookView(book: book)
                         } label: {
-                            MainViewRow(title: book.title, author: book.author, bookId: book.id,isFavourite: book.isFavourite)
+                            MainViewRow(book: book)
                         }
                         .foregroundColor(.black)
                     }

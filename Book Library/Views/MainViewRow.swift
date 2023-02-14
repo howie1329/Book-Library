@@ -9,10 +9,7 @@ import SwiftUI
 
 struct MainViewRow: View {
     
-    var title:String
-    var author:String
-    var bookId:Int
-    var isFavourite = true
+    @State var book: Book
     
     var body: some View {
         ZStack(alignment:.bottom){
@@ -27,20 +24,18 @@ struct MainViewRow: View {
                 VStack{
                     HStack(spacing:50){
                         VStack(alignment:.leading){
-                            Text(title)
+                            Text(book.title)
                                 .font(.title)
                                 .bold()
-                            Text(author)
+                            Text(book.author)
                                 .bold()
                         }
                         VStack{
-                            Button(action: {}) {
-                                if isFavourite {
-                                    Image(systemName: "star.fill")
-                                        .resizable()
-                                        .frame(width:40,height: 40)
-                                        .foregroundColor(.yellow)
-                                }
+                            if book.isFavourite == true {
+                                Image(systemName: "star.fill")
+                                    .resizable()
+                                    .frame(width:40,height: 40)
+                                    .foregroundColor(.yellow)
                             }
                         }
                     }
@@ -48,7 +43,7 @@ struct MainViewRow: View {
                 }
                 
                 VStack{
-                    Image("cover" + String(bookId))
+                    Image("cover" + String(book.id))
                         .resizable()
                         .frame(width:330,height: 500)
                         .clipped()
@@ -62,6 +57,7 @@ struct MainViewRow: View {
 
 struct MainViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        MainViewRow(title: "Amazing Words", author: "Howard Thomas", bookId: 1)
+        var model = BookModel()
+        MainViewRow(book: model.books[0])
     }
 }
