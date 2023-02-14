@@ -22,7 +22,7 @@ struct MainView: View {
                         NavigationLink {
                             Text("Hello")
                         } label: {
-                            MainViewRow(title: book.title, author: book.author, bookId: book.id)
+                            MainViewRow(title: book.title, author: book.author, bookId: book.id,isFavourite: book.isFavourite)
                         }
                         .foregroundColor(.black)
                     }

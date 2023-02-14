@@ -12,7 +12,7 @@ struct MainViewRow: View {
     var title:String
     var author:String
     var bookId:Int
-    var starStatus = false
+    var isFavourite = true
     
     var body: some View {
         ZStack(alignment:.bottom){
@@ -35,15 +35,11 @@ struct MainViewRow: View {
                         }
                         VStack{
                             Button(action: {}) {
-                                if starStatus{
+                                if isFavourite {
                                     Image(systemName: "star.fill")
                                         .resizable()
-                                        .frame(width:100,height: 35)
-                                }
-                                else{
-                                    Image(systemName: "star")
-                                        .resizable()
-                                        .frame(width:25,height: 25)
+                                        .frame(width:40,height: 40)
+                                        .foregroundColor(.yellow)
                                 }
                             }
                         }
