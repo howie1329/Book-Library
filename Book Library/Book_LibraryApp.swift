@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct Book_LibraryApp: App {
+    var model = BookModel()
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(BookModel())
+                .environmentObject(model)
         }
     }
 }

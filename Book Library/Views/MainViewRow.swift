@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainViewRow: View {
     
-    @State var book: Book
+    var book: Book
     
     var body: some View {
         ZStack(alignment:.bottom){
@@ -31,8 +31,14 @@ struct MainViewRow: View {
                                 .bold()
                         }
                         VStack{
-                            if book.isFavourite == true {
+                            if book.isFavourite {
                                 Image(systemName: "star.fill")
+                                    .resizable()
+                                    .frame(width:40,height: 40)
+                                    .foregroundColor(.yellow)
+                            }
+                            else{
+                                Image(systemName: "star")
                                     .resizable()
                                     .frame(width:40,height: 40)
                                     .foregroundColor(.yellow)

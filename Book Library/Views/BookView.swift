@@ -9,7 +9,11 @@ import SwiftUI
 
 struct BookView: View {
     
-    @State var book:Book
+    @EnvironmentObject var model:BookModel
+    
+    var book:Book
+    
+    @State var rating = 2
 
     var body: some View {
         VStack(spacing:10){
@@ -23,9 +27,7 @@ struct BookView: View {
                 .bold()
             //Button
             
-            Button {
-                book.isFavourite.toggle()
-            } label: {
+            Button (action:{model.updateFavourite(forId: book.id)}) {
                 if book.isFavourite{
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
@@ -36,10 +38,10 @@ struct BookView: View {
                 
             }
 
-            Text("Rate " + (book.title))
+            Text("Rate " + String(book.title))
                 .bold()
             //Picker
-            Picker("",selection: $book.rating){
+            Picker("",selection: $rating){
                 Text("1").tag(1)
                 Text("2").tag(2)
                 Text("3").tag(3)
@@ -57,7 +59,7 @@ struct BookView: View {
 
 struct BookView_Previews: PreviewProvider {
     static var previews: some View {
-        var model = BookModel()
-        BookView(book: model.books[0])
+        var book = BookModel().books[0]
+        BookView(book: book)
     }
 }
